@@ -5,7 +5,7 @@ function createManagerCards (manager) {
         let card = `<div class="card">
         <div class="card-title">
             <h3 class="name">${tempMan.name}</h3>
-            <h4 class="type">Manager</h4>
+            <h4 class="type">Manager   <img src='./dist/images/Manager.png' alt='coffee cup' height='20px' width='20px'></h4>
         </div>
         <div class="card-body">
             <p>ID: <span class="ID">${tempMan.id}</span></p>

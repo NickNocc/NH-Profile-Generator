@@ -15,8 +15,7 @@ function createHtml(managerDeck, engineerDeck, internDeck) {
         <main>
             <div class="employees">
                 <div class="manager">
-                <div class="manager-card">
-                <img src='./dist/images/'
+                <div class="manager-cards">
                     ${managerDeck}
                 </div>
             </div>

@@ -110,7 +110,7 @@ inquirer.registerPrompt('loop', require('inquirer-loop')(inquirer));
             empMail: resData.empMail,
             offNum: resData.offNum 
         }];
-        employees.push(firstEntry);
+        employees.push(firstEntry[0]);
         console.log(employees);
 
         let managers = [];
