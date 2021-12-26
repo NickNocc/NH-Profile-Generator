@@ -16,7 +16,7 @@ function createHtml(managerDeck, engineerDeck, internDeck) {
             <div class="employees">
                 <div class="manager">
                 <div class="manager-card">
-                <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+                <img src='./dist/images/'
                     ${managerDeck}
                 </div>
             </div>
