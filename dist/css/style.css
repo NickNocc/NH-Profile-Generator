@@ -29,7 +29,7 @@ main {
     width: 20vw;
     height: 30vh;
     margin-bottom: 2rem;
-    margin-right: 2rem;
+    margin-right: 1vw;
 }
 
 .card p {
@@ -47,7 +47,7 @@ main {
 .manager-cards, .engineer-cards, .intern-cards {
     width: 100%;
     display: flex;
-    margin: 2rem;
+    margin: 1vw;
     text-align: center;
     flex-wrap: wrap;
 }
