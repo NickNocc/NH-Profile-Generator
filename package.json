@@ -22,6 +22,7 @@
   "homepage": "https://github.com/NickNocc/NH-Profile-Generator#readme",
   "dependencies": {
     "inquirer": "^8.2.0",
+    "inquirer-loop": "^0.3.0",
     "jest": "^27.4.5"
   }
 }
