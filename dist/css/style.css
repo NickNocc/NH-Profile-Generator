@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: red;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 4vh;
+}
+
+.employees {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    box-shadow: 1px 3px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 2rem;
+    width: 20vw;
+    height: 30vh;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+}
+
+.card p {
+    margin: 10%;
+    text-align: left;
+}
+
+.card-title {
+    color: white;
+    background: rgb(56, 126, 255);
+    padding: 1rem;
+    border-radius: 2rem 2rem 0rem 0rem;
+}
+
+.manager-cards, .engineer-cards, .intern-cards {
+    width: 100%;
+    display: flex;
+    margin: 2rem;
+    text-align: center;
+    flex-wrap: wrap;
+}

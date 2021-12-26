@@ -3,6 +3,8 @@ const inquirer = require (`inquirer`);
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
+const { createManagerCards, createEngineerCards, createInternCards } = require('./dist/templates/cards')
+const buildHTML = require('./dist/templates/html')
 inquirer.registerPrompt('loop', require('inquirer-loop')(inquirer));
 
 
@@ -109,6 +111,7 @@ inquirer.registerPrompt('loop', require('inquirer-loop')(inquirer));
             offNum: resData.offNum 
         }];
         employees.push(firstEntry);
+        console.log(employees);
 
         let managers = [];
         let engineers = [];
@@ -127,6 +130,21 @@ inquirer.registerPrompt('loop', require('inquirer-loop')(inquirer));
                 engineers.push(engineer);
             }
         }
+        // console.log(managers);
+        // console.log(engineers);
+        // console.log(interns);
+        const managerDeck = createManagerCards(managers);
+        const engineerDeck = createEngineerCards(engineers);
+        const internDeck = createInternCards(interns);
+        const pageBuilder = buildHTML(managerDeck, engineerDeck, internDeck);
+
+        fs.writeFile('index.html', pageBuilder, (err) => {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("Page Built!");
+            }
+        })
     })
     .catch(err => {
         console.log(err);
