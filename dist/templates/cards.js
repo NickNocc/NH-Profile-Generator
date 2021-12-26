@@ -5,7 +5,7 @@ function createManagerCards (manager) {
         let card = `<div class="card">
         <div class="card-title">
             <h3 class="name">${tempMan.name}</h3>
-            <h4 class="type">Manager   <img src='./dist/images/Manager.png' alt='coffee cup' height='20px' width='20px'></h4>
+            <h4 class="type">Manager   <img src='./dist/images/Manager.png' alt='coffee cup' height='25px' width='25px'></h4>
         </div>
         <div class="card-body">
             <p>ID: <span class="ID">${tempMan.id}</span></p>
@@ -24,7 +24,7 @@ function createEngineerCards (engineers) {
         let card = `<div class="card">
         <div class="card-title">
             <h3 class="name">${tempEngineer.name}</h3>
-            <h4 class="type">Engineer</h4>
+            <h4 class="type">Engineer   <img src='./dist/images/Engineer.png' alt='Glasses bc they nerds lmao' height='25px' width='25px'></h4>
         </div>
         <div class="card-body">
             <p>ID: <span class="ID">${tempEngineer.id}</span></p>
@@ -44,7 +44,7 @@ function createInternCards (interns) {
         let card = `<div class="card">
         <div class="card-title">
             <h3 class="name">${tempIntern.name}</h3>
-            <h4 class="type">Intern</h4>
+            <h4 class="type">Intern <img src='./dist/images/Intern.png' alt='Graduation cap' height='25px' width='25px'></h4>
         </div>
         <div class="card-body">
             <p>ID: <span class="ID">${tempIntern.id}</span></p>
