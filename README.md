@@ -18,3 +18,4 @@ This app requires Inquirer to run. To install navigate to root of the directory 
 GitHub: https://github.com/NickNocc </br>
 Email: haretakis4@gmail.com
 
+![Video Walkthrough](https://watch.screencastify.com/v/Q1AD8x2od45v6gaHOdN8)
