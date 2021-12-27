@@ -11,10 +11,7 @@ This app allows you to create profiles for your employees. These profiles includ
 This app requires Inquirer to run. To install navigate to root of the directory and run "npm i inquirer -y". Jest was also used in creating this app, if you wish to run the tests jest can be installed by running "npm i jest" in the root. In addition to inquirer, this app also uses inquirer loop which can be installed by running "npm i inquirer-loop".
 
 
-## Questions
+* GitHub: https://github.com/NickNocc </br>
+* Email: haretakis4@gmail.com
 
- </br>
-  
-GitHub: https://github.com/NickNocc </br>
-Email: haretakis4@gmail.com
-
+* [Video Tutorial](https://watch.screencastify.com/v/Q1AD8x2od45v6gaHOdN8)
