@@ -5,9 +5,12 @@ const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
 const { createManagerCards, createEngineerCards, createInternCards } = require('./dist/src/cards')
 const buildHTML = require('./dist/src/html')
+
+// Grabbing our classes and functions from other files for use here
+// Needed for inquirer loop
 inquirer.registerPrompt('loop', require('inquirer-loop')(inquirer));
 
-
+// Prompt for the app, will set the role on first question so the appropriate questions are asked to the appropriate people
  const employeePrompt = () => {
     return inquirer.prompt([
         {
@@ -49,6 +52,7 @@ inquirer.registerPrompt('loop', require('inquirer-loop')(inquirer));
             message: `Please enter your current school`,
             when: ({ roleSelect }) => roleSelect == `Intern`
         },
+        // After the first employee this set of code will loop until youre out of employees to add
         {
             type: `loop`,
             name: `addEmployee`,
@@ -98,9 +102,11 @@ inquirer.registerPrompt('loop', require('inquirer-loop')(inquirer));
         },
     ]);
  };
-
+// Starts us off with the prompt
  employeePrompt()
     .then(resData => {
+        // Then once we have the data the first entry is oriented to the correct role, then added
+        // to our other array to avoid too many layers
         let firstEntry = [];
         let employees = resData.addEmployee;
         if (resData.offNum){
@@ -133,7 +139,7 @@ inquirer.registerPrompt('loop', require('inquirer-loop')(inquirer));
         let managers = [];
         let engineers = [];
         let interns = [];
-
+        // Cycles through all of our employees sorting them, then sending them to their card builder
         for (let i = 0; i < employees.length; i++) {
             let emp = employees[i]
             if (emp.roleSelect == "Manager") {
@@ -147,11 +153,12 @@ inquirer.registerPrompt('loop', require('inquirer-loop')(inquirer));
                 engineers.push(engineer);
             }
         }
+        // These functions make our cards, then the cards are sent to the html file to be created
         const managerDeck = createManagerCards(managers);
         const engineerDeck = createEngineerCards(engineers);
         const internDeck = createInternCards(interns);
         const pageBuilder = buildHTML(managerDeck, engineerDeck, internDeck);
-
+        // Once we have our page we have to write it to a file
         fs.writeFile('index.html', pageBuilder, (err) => {
             if (err) {
                 console.log(err);

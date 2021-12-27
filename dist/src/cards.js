@@ -1,5 +1,7 @@
 function createManagerCards (manager) {
+    // An empty string allows us to add html for any number of employees, same for every card maker
     let managerCards = ``
+    // for loop lets us cycle through all of our employees
     for(let i = 0; i < manager.length; i++) {
         let tempMan = manager[i]
         let card = `<div class="card">
@@ -11,9 +13,11 @@ function createManagerCards (manager) {
             <p>ID: <span class="ID">${tempMan.id}</span></p>
             <p>Email: <span class="Email"><a href="mailto:${tempMan.email}">${tempMan.email}</a></span></p>
             <p>Office Number: <span class="officeNumber">${tempMan.officeNo}</span></p></div>
-    </div>`
+        </div>`
+        // adding cards individually to the whole of the cards
     managerCards += card
     }
+    // sends back all of our created cards
     return managerCards
 }
 
@@ -31,7 +35,7 @@ function createEngineerCards (engineers) {
             <p>Email: <span class="Email"><a href="mailto:${tempEngineer.email}">${tempEngineer.email}</a></span></p>
             <p>Github: <span class="Github"><a href="https://www.github.com/${tempEngineer.gitHub}"  target="_blank">${tempEngineer.gitHub}</a></span></p>
         </div>
-    </div>`
+        </div>`
     engineerCards += card
     }
     return engineerCards
@@ -51,7 +55,7 @@ function createInternCards (interns) {
             <p>Email: <span class="Email"><a href="mailto:${tempIntern.email}">${tempIntern.email}</a></span></p>
             <p>School: <span class="Github">${tempIntern.school}</span></p>
         </div>
-    </div>`
+        </div>`
 
     internCards += card
     }
