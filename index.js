@@ -101,7 +101,6 @@ inquirer.registerPrompt('loop', require('inquirer-loop')(inquirer));
 
  employeePrompt()
     .then(resData => {
-        console.log(resData);
         let employees = resData.addEmployee;
         let firstEntry = [{
             roleSelect: resData.roleSelect,
@@ -111,7 +110,6 @@ inquirer.registerPrompt('loop', require('inquirer-loop')(inquirer));
             offNum: resData.offNum 
         }];
         employees.push(firstEntry[0]);
-        console.log(employees);
 
         let managers = [];
         let engineers = [];
@@ -130,9 +128,6 @@ inquirer.registerPrompt('loop', require('inquirer-loop')(inquirer));
                 engineers.push(engineer);
             }
         }
-        // console.log(managers);
-        // console.log(engineers);
-        // console.log(interns);
         const managerDeck = createManagerCards(managers);
         const engineerDeck = createEngineerCards(engineers);
         const internDeck = createInternCards(interns);
