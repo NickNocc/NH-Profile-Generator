@@ -3,8 +3,8 @@ const inquirer = require (`inquirer`);
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
-const { createManagerCards, createEngineerCards, createInternCards } = require('./dist/templates/cards')
-const buildHTML = require('./dist/templates/html')
+const { createManagerCards, createEngineerCards, createInternCards } = require('./dist/src/cards')
+const buildHTML = require('./dist/src/html')
 inquirer.registerPrompt('loop', require('inquirer-loop')(inquirer));
 
 
@@ -101,14 +101,33 @@ inquirer.registerPrompt('loop', require('inquirer-loop')(inquirer));
 
  employeePrompt()
     .then(resData => {
+        let firstEntry = [];
         let employees = resData.addEmployee;
-        let firstEntry = [{
-            roleSelect: resData.roleSelect,
-            empName: resData.empName,
-            empId: resData.empId,
-            empMail: resData.empMail,
-            offNum: resData.offNum 
-        }];
+        if (resData.offNum){
+            firstEntry = [{
+                roleSelect: resData.roleSelect,
+                empName: resData.empName,
+                empId: resData.empId,
+                empMail: resData.empMail,
+                offNum: resData.offNum 
+            }]
+        } else if (resData.gitHub) {
+            firstEntry = [{
+                roleSelect: resData.roleSelect,
+                empName: resData.empName,
+                empId: resData.empId,
+                empMail: resData.empMail,
+                gitHub: resData.gitHub 
+            }]
+        } else {
+            firstEntry = [{
+                roleSelect: resData.roleSelect,
+                empName: resData.empName,
+                empId: resData.empId,
+                empMail: resData.empMail,
+                school: resData.school 
+            }]
+        }
         employees.push(firstEntry[0]);
 
         let managers = [];
@@ -121,10 +140,10 @@ inquirer.registerPrompt('loop', require('inquirer-loop')(inquirer));
                 const manager = new Manager(emp.empName, emp.empId, emp.empMail, emp.offNum);
                 managers.push(manager);
             } else if (emp.roleSelect == "Intern") {
-                const intern = new Intern(emp.empName, emp.empId, emp.empMail, emp.gitHub);
+                const intern = new Intern(emp.empName, emp.empId, emp.empMail, emp.school);
                 interns.push(intern);
             } else if (emp.roleSelect == "Engineer") {
-                const engineer = new Engineer(emp.empName, emp.empId, emp.empMail, emp.school);
+                const engineer = new Engineer(emp.empName, emp.empId, emp.empMail, emp.gitHub);
                 engineers.push(engineer);
             }
         }

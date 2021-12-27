@@ -14,22 +14,15 @@ function createHtml(managerDeck, engineerDeck, internDeck) {
         </nav>
         <main>
             <div class="employees">
-                <div class="manager">
                 <div class="manager-cards">
                     ${managerDeck}
                 </div>
-            </div>
-                <div class="engineers">
-
-                    <div class="engineer-cards">
-                        ${engineerDeck}
-                    </div>
+ 
+                <div class="engineer-cards">
+                    ${engineerDeck}
                 </div>
-                <div class="interns">
-
-                    <div class="intern-cards">
-                        ${internDeck}
-                    </div>
+                <div class="intern-cards">
+                    ${internDeck}
                 </div>
             </div>
         </main>
